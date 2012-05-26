@@ -1,52 +1,66 @@
 flags: 
 
 %section.row.page-header
-  .hero-unit.curl.tanner-back
+  .hero-unit.curl.tanner-tired
     .row
+      %img.pull-right(width=300 src="#{url('/attachments/img/tanner-strong.jpg')}")
       %h1= Nesta::Config.title
     .row
-      %h2= Nesta::Config.subtitle
-%section.row.page-header#header
-  .span12
-    .row
-      .span6
-        %section.page-header
-          %h2 Tanner
-          :markdown 
+      %h2
+        = Nesta::Config.subtitle
+        %a(href="https://www.facebook.com/pages/Weelittlemanrico/462839513730559" title="We're on Facebook")
+          %img(width=40 src="#{url('attachments/logos/f_logo.png')}")
+        %a(href="https://twitter.com/#weelittlemanrico")
+          %img(width=40 src="#{url('attachments/logos/twitter_newbird_boxed_whiteonblue.png')}")
+.row.page-link#about
+  %section.row.page-header
+    .span6
+      %section
+        %h2 Tanner
+        :markdown 
 
-            Tanner is much like your typical six year-old boy.  He loves hanging
-            out with his friends, playing super heroes, and of course teasing
-            his big sister, Pria.  The thing that is different about Tanner is
-            that he has trouble running and jumping.  He can not kick a ball,
-            and he often falls for what seems to be for no reason at all.
+          Tanner is much like your typical six year-old boy.  He loves hanging
+          out with his friends, playing super heroes, and of course teasing
+          his big sister, Pria.  The thing that is different about Tanner is
+          that he has trouble running and jumping.  He can not kick a ball,
+          and he often falls for what seems to be for no reason at all.
 
-            Tanner was born with [Duchenne Muscular Dystrophies][DMD] (DMD).
+          Tanner was born with [Duchenne Muscular Dystrophies][DMD] (DMD).
 
-            [DMD]: http://www.nlm.nih.gov/medlineplus/ency/article/000705.htm
+          [DMD]: http://www.nlm.nih.gov/medlineplus/ency/article/000705.htm
 
-          %a.btn.btn-primary(href="/tanner") More about Tanner &raquo;
+        %a.btn.btn-primary(href="/tanner") More about Tanner &raquo;
 
-        %section.page-header
-          %h2 Pria
-          :markdown
+    .span6
+      %section
+        %h2 Pria
+        :markdown
   
-            Around the same time Tanner was diagnosed with DMD, our daughter
-            Pria's sweet little pixie girl voice began to change.  At first we
-            thought she just had a cold, but after a couple of weeks with her
-            voice sounding more and more like a young Demi Moore, off to the
-            specialist we went.  After a scope down her throat and a month of
-            medication and exploratory surgery she was diagnosed [Recurrent
-            Respiratory Papillomatosis][RPP], or RRP.
+          Around the same time Tanner was diagnosed with DMD, our daughter
+          Pria's sweet little pixie girl voice began to change.  At first we
+          thought she just had a cold, but after a couple of weeks with her
+          voice sounding more and more like a young Demi Moore, off to the
+          specialist we went.  After a scope down her throat and a month of
+          medication and exploratory surgery she was diagnosed [Recurrent
+          Respiratory Papillomatosis][RPP], or RRP.
   
-            [RPP]: http://www.nidcd.nih.gov/health/voice/pages/laryngeal.aspx
+          [RPP]: http://www.nidcd.nih.gov/health/voice/pages/laryngeal.aspx
   
-          %a.btn.btn-primary(href="/pria") More about Pria &raquo;
-      %aside.span6
-        %section#recent-news.page-header
-          %h2 Recent updates
-          = article_summaries(latest_articles(3))
+        %a.btn.btn-primary(href="/pria") More about Pria &raquo;
 
-        %section#upcoming-events.page-header
-          %h2 Upcoming events
+.row.page-link#updates
+  %section.row.page-header
+    .span6
+      %section#recent-news
+        %h2 Recent updates and upcoming events
+        = article_summaries(latest_articles(3))
+
+    .span6
+      %section#media
+        %h2 Media
+
+        %iframe(id="ytplayer" type="text/html" width="100%" height="390"
+                src="http://www.youtube.com/embed/Yw0d2f14tlU?autoplay=0&origin=http://weelittlemanrico.com"
+                frameborder="0")
 
 

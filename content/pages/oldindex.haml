@@ -1,0 +1,52 @@
+flags: 
+
+%section.row.page-header
+  .hero-unit.curl.tanner-back
+    .row
+      %h1= Nesta::Config.title
+    .row
+      %h2= Nesta::Config.subtitle
+%section.row.page-header#header
+  .span12
+    .row
+      .span6
+        %section.page-header
+          %h2 Tanner
+          :markdown 
+
+            Tanner is much like your typical six year-old boy.  He loves hanging
+            out with his friends, playing super heroes, and of course teasing
+            his big sister, Pria.  The thing that is different about Tanner is
+            that he has trouble running and jumping.  He can not kick a ball,
+            and he often falls for what seems to be for no reason at all.
+
+            Tanner was born with [Duchenne Muscular Dystrophies][DMD] (DMD).
+
+            [DMD]: http://www.nlm.nih.gov/medlineplus/ency/article/000705.htm
+
+          %a.btn.btn-primary(href="/tanner") More about Tanner &raquo;
+
+        %section.page-header
+          %h2 Pria
+          :markdown
+  
+            Around the same time Tanner was diagnosed with DMD, our daughter
+            Pria's sweet little pixie girl voice began to change.  At first we
+            thought she just had a cold, but after a couple of weeks with her
+            voice sounding more and more like a young Demi Moore, off to the
+            specialist we went.  After a scope down her throat and a month of
+            medication and exploratory surgery she was diagnosed [Recurrent
+            Respiratory Papillomatosis][RPP], or RRP.
+  
+            [RPP]: http://www.nidcd.nih.gov/health/voice/pages/laryngeal.aspx
+  
+          %a.btn.btn-primary(href="/pria") More about Pria &raquo;
+      %aside.span6
+        %section#recent-news.page-header
+          %h2 Recent updates
+          = article_summaries(latest_articles(3))
+
+        %section#upcoming-events.page-header
+          %h2 Upcoming events
+
+
