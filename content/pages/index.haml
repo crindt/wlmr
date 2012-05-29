@@ -58,6 +58,6 @@ flags:
     .span6
       %section.summaries#media
         %h2 Media
-        = article_summaries(filter_for_categories(Nesta::Page.find_articles,'media')[0..2])
+        = article_summaries(filter_for_categories(Nesta::Page.find_articles,'media')[0..2], "span6")
 
 
