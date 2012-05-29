@@ -52,7 +52,7 @@ flags:
   %section.row.page-header
     .span6
       %section.summaries#recent-news
-        %h2 Recent updates and upcoming events
+        %h2 Recent updates
         = article_summaries(filter_out_categories(Nesta::Page.find_articles,'media')[0..2])
 
     .span6
