@@ -4,14 +4,13 @@ flags:
   .hero-unit.curl.tanner-tired
     .row
       %img.pull-right(width=300 src="#{url('/attachments/img/tanner-strong.jpg')}")
-      %h1= Nesta::Config.title
+      %header
+        %h1= Nesta::Config.title
+        %small.slogan I can do all things through Christ who strengthens me ~ Ph 4:13
+
     .row
       %h2
         = Nesta::Config.subtitle
-        %a(href="https://www.facebook.com/pages/Weelittlemanrico/462839513730559" title="We're on Facebook")
-          %img(width=40 src="#{url('attachments/logos/f_logo.png')}")
-        %a(href="https://twitter.com/#weelittlemanrico")
-          %img(width=40 src="#{url('attachments/logos/twitter_newbird_boxed_whiteonblue.png')}")
 .row.page-link#about
   %section.row.page-header
     .span6
@@ -36,12 +35,13 @@ flags:
         %h2 Pria
         :markdown
   
-          Around the same time Tanner was diagnosed with DMD, our daughter
-          Pria's sweet little pixie girl voice began to change.  At first we
-          thought she just had a cold, but after a couple of weeks with her
-          voice sounding more and more like a young Demi Moore, off to the
-          specialist we went.  After a scope down her throat and a month of
-          medication and exploratory surgery she was diagnosed [Recurrent
+          Around the same time Tanner was diagnosed with DMD, our
+          daughter Pria's sweet little pixie girl voice began to
+          change.  At first we thought she just had a cold, but after
+          a couple of weeks with her voice sounding more and more like
+          a young Demi Moore, off to the specialist we went.  After a
+          scope down her throat and a month of medication and
+          exploratory surgery she was diagnosed with [Recurrent
           Respiratory Papillomatosis][RPP], or RRP.
   
           [RPP]: http://www.nidcd.nih.gov/health/voice/pages/laryngeal.aspx
@@ -51,16 +51,13 @@ flags:
 .row.page-link#updates
   %section.row.page-header
     .span6
-      %section#recent-news
-        %h2 Recent updates and upcoming events
-        = article_summaries(latest_articles(3))
+      %section.summaries#recent-news
+        %h2 Recent updates
+        = article_summaries(filter_out_categories(Nesta::Page.find_articles,'media')[0..2])
 
     .span6
-      %section#media
+      %section.summaries#media
         %h2 Media
-
-        %iframe(id="ytplayer" type="text/html" width="100%" height="390"
-                src="http://www.youtube.com/embed/Yw0d2f14tlU?autoplay=0&origin=http://weelittlemanrico.com"
-                frameborder="0")
+        = article_summaries(filter_for_categories(Nesta::Page.find_articles,'media')[0..2], "span6")
 
 
