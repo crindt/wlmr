@@ -1,4 +1,6 @@
 /
+about
 updates
 fundraising
+  lemon-aide-2012
 contact

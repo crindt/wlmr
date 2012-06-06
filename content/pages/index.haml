@@ -1,63 +1,43 @@
+Title: Lemon-aid for Tanner
+Template: home-nohero
+Link Text: Lemon-aid
+Bodyclass: no-background
 flags: 
 
-%section.row.page-header
-  .hero-unit.curl.tanner-tired
-    .row
-      %img.pull-right(width=300 src="#{url('/attachments/img/tanner-strong.jpg')}")
-      %header
-        %h1= Nesta::Config.title
-        %small.slogan I can do all things through Christ who strengthens me ~ Ph 4:13
-
-    .row
-      %h2
-        = Nesta::Config.subtitle
 .row.page-link#about
-  %section.row.page-header
-    .span6
-      %section
-        %h2 Tanner
-        :markdown 
+  %section.page-header
+    %ul.thumbnails
+      %li.span6(title="Click for information on participating")
+        %a.thumbnail(href="fundraising/lemon-aide-2012")
+          %img(width="100%" src="/attachments/lemon-aid-flyer-007-990x1280.jpg")
+      %li.span6
+        .thumbnail(href="#" style="height:33%")
+          %h1 Find a Location
+          :markdown
+            The main Lemon-Aid location will be located at:
+            > Cardiff Seaside Market<br>
+            > 2087 San Elijo Ave.,<br>
+            > Cardiff by the Sea, 92007
 
-          Tanner is much like your typical six year-old boy.  He loves hanging
-          out with his friends, playing super heroes, and of course teasing
-          his big sister, Pria.  The thing that is different about Tanner is
-          that he has trouble running and jumping.  He can not kick a ball,
-          and he often falls for what seems to be for no reason at all.
+            We'll add more locations as people sign up...
+          %a.btn.btn-primary(href="fundraising/lemon-aide-2012") Find more locations
 
-          Tanner was born with [Duchenne Muscular Dystrophies][DMD] (DMD).
+        .thumbnail(href="#" style="height:33%")
+          %h1 Host a Stand
+          :markdown
+            If you would like to host your own stand to support Tanner email
+            Lisa at [5daltons@cox.net](mailto:5daltons@cox.net) or call
+            (760) 944-1423 to register your stand.
+          %a.btn.btn-primary(href="fundraising/lemon-aide-2012") More details
 
-          [DMD]: http://www.nlm.nih.gov/medlineplus/ency/article/000705.htm
+        .thumbnail(href="#" style="height:33%")
+          %h1 Hire Traci
+          :markdown
+            Tanner’s mom is a professional accountant with a
+            celebrated work history. All connections are welcomed!!!
+            To contact Traci for a job, please call her at (760)
+            822-3756.  Check out her
+            [resume](/attachments/resumes/traci-rico.docx).
 
-        %a.btn.btn-primary(href="/tanner") More about Tanner &raquo;
-
-    .span6
-      %section
-        %h2 Pria
-        :markdown
-  
-          Around the same time Tanner was diagnosed with DMD, our
-          daughter Pria's sweet little pixie girl voice began to
-          change.  At first we thought she just had a cold, but after
-          a couple of weeks with her voice sounding more and more like
-          a young Demi Moore, off to the specialist we went.  After a
-          scope down her throat and a month of medication and
-          exploratory surgery she was diagnosed with [Recurrent
-          Respiratory Papillomatosis][RPP], or RRP.
-  
-          [RPP]: http://www.nidcd.nih.gov/health/voice/pages/laryngeal.aspx
-  
-        %a.btn.btn-primary(href="/pria") More about Pria &raquo;
-
-.row.page-link#updates
-  %section.row.page-header
-    .span6
-      %section.summaries#recent-news
-        %h2 Recent updates
-        = article_summaries(filter_out_categories(Nesta::Page.find_articles,'media')[0..2])
-
-    .span6
-      %section.summaries#media
-        %h2 Media
-        = article_summaries(filter_for_categories(Nesta::Page.find_articles,'media')[0..2], "span6")
-
-
+          
+          
