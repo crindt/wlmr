@@ -15,22 +15,25 @@ Link Text: Contact
       .control-group
         %label.control-label{:for => "name"} Name:
         .controls
-          %input.field.required{:type => "text", :name => "name", :id => "name", :class => "text"}
+          %input.field.required{:type => "text", :name => "name", :id => "name", :class => "text", :value => session[:name]}
       .control-group
         %label.control-label{:for => "email"} Your email address:
         .controls
-          %input.field.required.email{:type => "text", :name => "email", :id => "email", :class => "text"}
+          %input.field.required.email{:type => "text", :name => "email", :id => "email", :class => "text", :value => session[:email]}
       .control-group
         %label.control-label{:for => "subject"} Subject:
         .controls
-          %input.field.required{:type => "text", :name => "subject", :id => "subject", :class => "text"}
+          %input.field.required{:type => "text", :name => "subject", :id => "subject", :class => "text", :value => session[:subject]}
       .control-group
         %label.control-label{:for => "message"} Message:
         .controls
-          %textarea{:style => "width:100%;height:200px", :name => "message", :id => "message"}
+          %textarea{:style => "width:100%;height:200px", :name => "message", :id => "message", :value => session[:message]}
       .control-group
-        .controls
+        .controls(data-placement="left" title="Enter the text in the picture to confirm you're human")
           =recaptcha_tag(:challenge)
+          - if params['captcha'] == 'failed' || session[:captcha] == 'failed'
+            %label.error{:generated => "true"} 
+              You didn't correctly identify the text.  Please try again.
       .form-actions
         %input.btn.btn-primary{:type => "submit", :value => "Send", :class => "button"}
 
