@@ -10,18 +10,27 @@ Link Text: Contact
   to you.
 
 %section
-  %form(action="/contact" method="post")
-    %label{:for => "name"} Name:
-    %input.field{:type => "text", :name => "name", :id => "name", :class => "text"}
-    %br
-    %label{:for => "mail"} Your email address:
-    %input.field{:type => "text", :name => "mail", :id => "mail", :class => "text"}
-    %br
-    %label{:for => "subject"} Subject:
-    %input.field{:type => "text", :name => "subject", :id => "subject", :class => "text"}
-    %br
-    %label{:for => "message"} Message:
-    %textarea{:style => "width:100%;height:200px", :name => "message", :id => "message"}
-    %input.btn.btn-primary{:type => "submit", :value => "Send", :class => "button"}
-
+  %form.form-horizontal#contactForm(action="/contact" method="post")
+    %fieldset
+      .control-group
+        %label.control-label{:for => "name"} Name:
+        .controls
+          %input.field.required{:type => "text", :name => "name", :id => "name", :class => "text"}
+      .control-group
+        %label.control-label{:for => "email"} Your email address:
+        .controls
+          %input.field.required.email{:type => "text", :name => "email", :id => "email", :class => "text"}
+      .control-group
+        %label.control-label{:for => "subject"} Subject:
+        .controls
+          %input.field.required{:type => "text", :name => "subject", :id => "subject", :class => "text"}
+      .control-group
+        %label.control-label{:for => "message"} Message:
+        .controls
+          %textarea{:style => "width:100%;height:200px", :name => "message", :id => "message"}
+      .control-group
+        .controls
+          =recaptcha_tag(:challenge)
+      .form-actions
+        %input.btn.btn-primary{:type => "submit", :value => "Send", :class => "button"}
 
