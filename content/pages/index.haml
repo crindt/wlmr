@@ -39,5 +39,15 @@ flags:
             822-3756.  Check out her
             [resume](/attachments/resumes/traci-rico.docx).
 
+        .thumbnail(href="#" style="height:33%")
+          %h1 
+            Latest update:
+            = Nesta::Page.find_by_path('/updates').articles[0].link_text
           
-          
+          %p
+            ~ Nesta::Page.find_by_path('/updates').articles[0].summary
+          %p.read_more
+            %a.btn.btn-primary(href="/updates##{Nesta::Page.find_by_path('/updates').articles[0].path.gsub(/\//,"_")}") Read More
+
+        
+        
